@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:48693/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:48693/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:48693/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LightControllerRestService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_AddLumen_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLumen" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddLumen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLumenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLumen_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLumen" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLumen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLumenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLumenByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLumenByID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLumenByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLumenByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLumenByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLumenByDate" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLumenByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLumenByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateLumen_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLumen" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateLumen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLumenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteLumen_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLumen" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteLumen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLumenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteLumenByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLumenByID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteLumenByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLumenByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLimit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddTimer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTimer" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddTimer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTimerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetWeather_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWeather" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetWeather_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWeatherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTemperature_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemperature" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTemperature_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemperatureResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="AddLumen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddLumen" message="tns:IService1_AddLumen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddLumenResponse" message="tns:IService1_AddLumen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLumen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLumen" message="tns:IService1_GetLumen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLumenResponse" message="tns:IService1_GetLumen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLumenByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLumenByID" message="tns:IService1_GetLumenByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLumenByIDResponse" message="tns:IService1_GetLumenByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLumenByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLumenByDate" message="tns:IService1_GetLumenByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLumenByDateResponse" message="tns:IService1_GetLumenByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLumen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateLumen" message="tns:IService1_UpdateLumen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateLumenResponse" message="tns:IService1_UpdateLumen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLumen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteLumen" message="tns:IService1_DeleteLumen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteLumenResponse" message="tns:IService1_DeleteLumen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLumenByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteLumenByID" message="tns:IService1_DeleteLumenByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteLumenByIDResponse" message="tns:IService1_DeleteLumenByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddStatus" message="tns:IService1_AddStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddStatusResponse" message="tns:IService1_AddStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddLimit" message="tns:IService1_AddLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddLimitResponse" message="tns:IService1_AddLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTimer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddTimer" message="tns:IService1_AddTimer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddTimerResponse" message="tns:IService1_AddTimer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWeather">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetWeather" message="tns:IService1_GetWeather_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetWeatherResponse" message="tns:IService1_GetWeather_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemperature">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTemperature" message="tns:IService1_GetTemperature_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTemperatureResponse" message="tns:IService1_GetTemperature_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddLumen">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddLumen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLumen">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetLumen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLumenByID">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetLumenByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLumenByDate">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetLumenByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLumen">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateLumen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLumen">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteLumen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLumenByID">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteLumenByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLimit">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTimer">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddTimer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeather">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetWeather" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemperature">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTemperature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:48693/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
